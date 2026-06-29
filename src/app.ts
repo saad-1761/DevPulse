@@ -1,5 +1,6 @@
 import cors from "cors";
 import express,{ type Application , type Response, type Request} from "express";
+import { userRoute } from "./modules/user/user.route";
 
 const app : Application = express();
 
@@ -20,5 +21,7 @@ app.get("/",(req:Request,res:Response)=>{
  })
 }
 )
+
+app.use("/api/auth/signup",userRoute);
 
 export default app;
